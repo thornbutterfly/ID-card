@@ -4,18 +4,20 @@ import os
 import random
 import datetime
 from pathlib import Path
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-DC_PATH = BASE_DIR + "districtcode.txt"
+# BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+# DC_PATH = BASE_DIR + "districtcode.txt"
 本地路径 = Path(__file__)
 上一级 = Path(__file__).parent
-
-# file = open('districtcode.txt', 'r', encoding='UTF-8', errors='ignore')
-# read = file.read()
-# print(read)
+'''
+print(上一级 / 'districtcode.txt')
+file = open(上一级 / 'districtcode.txt', 'r', encoding='UTF-8', errors='ignore')
+read = file.read()
+print(read)
+'''
 
 
 def getdistrictcode():
-    with open('districtcode.txt', 'r', encoding='UTF-8', errors='ignore') as file:
+    with open(上一级 / 'districtcode.txt', 'r', encoding='UTF-8', errors='ignore') as file:
         data = file.read()
         districtlist = data.split('\n')
     for node in districtlist:
