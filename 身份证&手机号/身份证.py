@@ -17,6 +17,7 @@ print(read)
 
 
 def getdistrictcode():
+    # districtcode.txt 需要放在同一目录下
     with open(上一级 / 'districtcode.txt', 'r', encoding='UTF-8', errors='ignore') as file:
         data = file.read()
         districtlist = data.split('\n')
@@ -53,5 +54,5 @@ def gennerator():
         id = id + checkcode[str(count % 11)]  # 算出校验码
         return id
 
-for x in range(50):
+for x in range(10):
     print(gennerator())
